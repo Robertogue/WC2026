@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-16T19:00:10.407Z",
+  "updatedAt": "2026-06-16T21:42:27.878Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -550,7 +550,7 @@
     {
       "id": 537391,
       "utcDate": "2026-06-16T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "stage": "GROUP_STAGE",
       "group": "GROUP_I",
@@ -569,15 +569,15 @@
         "crest": "https://crests.football-data.org/senegal.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 3,
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       }
     },
