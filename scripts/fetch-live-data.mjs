@@ -4,9 +4,7 @@ const token = process.env.FOOTBALL_DATA_TOKEN;
 const outPath = 'data/live.json';
 
 if (!token) {
-  console.log('FOOTBALL_DATA_TOKEN is not configured; keeping placeholder live data.');
-  await mkdir('data', { recursive: true });
-  await writeFile(outPath, JSON.stringify({ updatedAt: new Date().toISOString(), source: 'missing-token', matches: [] }, null, 2));
+  console.log('FOOTBALL_DATA_TOKEN is not configured; skipping live-data update.');
   process.exit(0);
 }
 
