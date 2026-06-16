@@ -48,8 +48,8 @@
 
 <script>
 const FIXTURES_URL='https://www.thestatsapi.com/world-cup/data/fixtures.json';
-// Optional: if you later add a backend proxy, set LIVE_PROXY_URL to its endpoint.
-const LIVE_PROXY_URL='';
+// GitHub Actions writes live scores here when FOOTBALL_DATA_TOKEN is configured as a repo secret.
+const LIVE_PROXY_URL='data/live.json';
 const TZ='America/Matamoros';
 let fixtures=[], liveGames=[], activeTab='upcoming';
 const $=id=>document.getElementById(id);
@@ -76,13 +76,29 @@ async function load(){
   }
 }
 async function loadLive(){
-  if(!LIVE_PROXY_URL) return [];
-  const r=await fetch(LIVE_PROXY_URL,{cache:'no-store'}); if(!r.ok) throw new Error('Live API '+r.status); return r.json();
+  const r=await fetch(LIVE_PROXY_URL+'?t='+Date.now(),{cache:'no-store'});
+  if(!r.ok) return [];
+  const data=await r.json();
+  return Array.isArray(data)?data:(data.matches||data.games||[]);
+}
+function teamName(t){return typeof t==='string'?t:(t?.name||t?.shortName||t?.tla||'')}
+function dateKey(iso){return (iso||'').slice(0,10)}
+function matchKey(home,away,iso){return norm(teamName(home))+'|'+norm(teamName(away))+'|'+dateKey(iso)}
+function scoreFrom(g,side){
+  const ft=g.score?.fullTime?.[side], reg=g.score?.regularTime?.[side], direct=side==='home'?g.homeScore:g.awayScore;
+  return direct ?? ft ?? reg ?? null;
 }
 function mergeLive(){
-  // Supports common shapes; safe no-op until a live proxy is connected.
-  const byNum=new Map(liveGames.map(g=>[String(g.matchNumber||g.id||g.number),g]));
-  fixtures=fixtures.map(f=>{const g=byNum.get(String(f.matchNumber)); if(!g) return f; return {...f,...g,status:g.status||g.state||f.status,homeScore:g.homeScore??g.score?.home,awayScore:g.awayScore??g.score?.away};});
+  const byNum=new Map(), byTeams=new Map();
+  liveGames.forEach(g=>{
+    if(g.matchNumber||g.number) byNum.set(String(g.matchNumber||g.number),g);
+    byTeams.set(matchKey(g.homeTeam||g.home_team,g.awayTeam||g.away_team,g.utcDate||g.kickoffUtc||g.date),g);
+  });
+  fixtures=fixtures.map(f=>{
+    const g=byNum.get(String(f.matchNumber)) || byTeams.get(matchKey(f.homeTeam,f.awayTeam,f.kickoffUtc));
+    if(!g) return f;
+    return {...f,status:g.status||g.state||f.status,homeScore:scoreFrom(g,'home'),awayScore:scoreFrom(g,'away')};
+  });
 }
 function render(msg){
   populateFilters(); updateMetrics(); renderGroups(); renderMatches();
@@ -92,7 +108,7 @@ function filtered(){
   const g=$('groupFilter').value, q=norm($('search').value), now=Date.now();
   return fixtures.filter(m=>g==='all'||m.group===g).filter(m=>!q||norm([m.homeTeam,m.awayTeam,m.stadium,m.hostCity].join(' ')).includes(q)).filter(m=>{
     const done=['FINISHED','finished','done','completed'].includes(m.status)||m.homeScore!=null;
-    if(activeTab==='results') return done || new Date(m.kickoffUtc)<now;
+    if(activeTab==='results') return done;
     if(activeTab==='upcoming') return !done && new Date(m.kickoffUtc)>=now-3*3600_000;
     return true;
   }).sort((a,b)=>new Date(a.kickoffUtc)-new Date(b.kickoffUtc));
@@ -105,8 +121,9 @@ function renderMatches(){
   $('matches').innerHTML=rows.length?rows.map(m=>{
     const done=m.homeScore!=null || ['FINISHED','finished','done','completed'].includes(m.status);
     const score=done?`<div class="score">${m.homeScore??'-'} - ${m.awayScore??'-'}</div>`:`<span class="badge">${fmtDate(m.kickoffUtc)}</span>`;
-    return `<article class="match"><div class="matchnum">#${m.matchNumber}</div><div><div class="teams">${m.homeTeam} vs ${m.awayTeam}</div><div class="meta">${stageName(m.stage)}${m.group?' · Grupo '+m.group:''} · ${m.stadium} · ${hostCity(m.hostCity)}</div></div><div>${score}</div></article>`
-  }).join(''):'<div class="card">No hay partidos en esta vista.</div>';
+    const resultLabel=activeTab==='results' && !done ? '<span class="badge">Resultado pendiente</span>' : score;
+    return `<article class="match"><div class="matchnum">#${m.matchNumber}</div><div><div class="teams">${m.homeTeam} vs ${m.awayTeam}</div><div class="meta">${stageName(m.stage)}${m.group?' · Grupo '+m.group:''} · ${m.stadium} · ${hostCity(m.hostCity)}</div></div><div>${resultLabel}</div></article>`
+  }).join(''):(activeTab==='results'?'<div class="card"><strong>Todavía no hay resultados conectados.</strong><br><span class="meta">El calendario ya funciona. Para mostrar marcadores automáticamente, agrega el token de football-data.org como secreto <code>FOOTBALL_DATA_TOKEN</code> en este repo y ejecuta la acción “Update live World Cup data”.</span></div>':'<div class="card">No hay partidos en esta vista.</div>');
 }
 function renderGroups(){
   const groups={}; fixtures.filter(f=>f.group).forEach(f=>{groups[f.group]=groups[f.group]||new Set(); groups[f.group].add(f.homeTeam); groups[f.group].add(f.awayTeam);});
