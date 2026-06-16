@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mundial 2026 | Resultados y calendario</title>
+  <meta name="description" content="Calendario, resultados y próximos partidos del Mundial 2026." />
+  <style>
+    :root{--bg:#07111f;--panel:#0f1c2d;--panel2:#13243a;--text:#f7fafc;--muted:#a8b3c7;--brand:#16a34a;--accent:#facc15;--line:#26384f;--danger:#ef4444;--ok:#22c55e}*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at top left,#123b2a,transparent 34rem),linear-gradient(135deg,#07111f,#101827 55%,#06111f);color:var(--text)}.wrap{max-width:1120px;margin:0 auto;padding:22px}.hero{display:grid;gap:16px;grid-template-columns:1fr;align-items:end;padding:24px 0}.kicker{color:var(--accent);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}.title{font-size:clamp(2rem,6vw,4.6rem);line-height:.95;margin:.1em 0;font-weight:950}.subtitle{max-width:780px;color:var(--muted);font-size:1.08rem;line-height:1.55}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:20px 0}.btn,.chip,select,input{border:1px solid var(--line);background:rgba(15,28,45,.9);color:var(--text);border-radius:999px;padding:10px 14px;font-weight:700}.btn{cursor:pointer}.btn.primary{background:var(--brand);border-color:var(--brand);color:#04130a}.btn:hover{filter:brightness(1.1)}.status{color:var(--muted);font-size:.92rem}.grid{display:grid;gap:14px}.cards{grid-template-columns:repeat(4,minmax(0,1fr));margin:20px 0}.card{background:rgba(15,28,45,.84);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 20px 80px rgba(0,0,0,.2);backdrop-filter:blur(10px)}.metric{font-size:2rem;font-weight:950}.label{color:var(--muted);font-size:.86rem;margin-top:4px}.section-title{font-size:1.4rem;font-weight:900;margin:28px 0 12px}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tab{cursor:pointer}.tab.active{background:var(--accent);color:#111827;border-color:var(--accent)}.matches{display:grid;gap:10px}.match{display:grid;grid-template-columns:78px 1fr auto;gap:14px;align-items:center;background:rgba(19,36,58,.78);border:1px solid var(--line);border-radius:18px;padding:14px}.matchnum{color:var(--accent);font-weight:900}.teams{font-size:1.05rem;font-weight:850}.meta{color:var(--muted);font-size:.9rem;margin-top:4px}.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 10px;border:1px solid var(--line);color:var(--muted);font-weight:800;font-size:.82rem;white-space:nowrap}.badge.live{color:#fff;background:var(--danger);border-color:var(--danger)}.badge.done{color:#052e16;background:var(--ok);border-color:var(--ok)}.score{font-size:1.25rem;font-weight:950}.groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.group h3{margin:0 0 10px}.team{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:8px 0;color:var(--muted)}.footer{color:var(--muted);font-size:.85rem;margin:34px 0 14px}.notice{border-left:4px solid var(--accent);padding:12px 14px;background:rgba(250,204,21,.09);border-radius:14px;color:#fde68a;margin:12px 0}@media(max-width:850px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.groups{grid-template-columns:1fr}.match{grid-template-columns:1fr}.score{text-align:left}}@media(max-width:520px){.wrap{padding:14px}.cards{grid-template-columns:1fr}.toolbar{align-items:stretch}.btn,.chip,select,input{width:100%}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="kicker">Periódico Contacto · Mundial 2026</div>
+        <h1 class="title">Resultados y próximos partidos</h1>
+        <p class="subtitle">Calendario completo del Mundial 2026 con horarios locales para Matamoros/Brownsville. La página intenta cargar datos en vivo y usa el calendario público como respaldo.</p>
+      </div>
+    </section>
+
+    <div class="toolbar">
+      <button id="refresh" class="btn primary">Actualizar</button>
+      <button data-tab="upcoming" class="btn tab active">Próximos</button>
+      <button data-tab="results" class="btn tab">Resultados</button>
+      <button data-tab="groups" class="btn tab">Grupos</button>
+      <select id="groupFilter" aria-label="Filtrar por grupo"><option value="all">Todos los grupos</option></select>
+      <input id="search" placeholder="Buscar equipo o ciudad" />
+    </div>
+    <div id="status" class="status">Cargando calendario…</div>
+    <div id="notice" class="notice" hidden></div>
+
+    <section class="grid cards">
+      <div class="card"><div id="totalMatches" class="metric">104</div><div class="label">Partidos</div></div>
+      <div class="card"><div id="nextMatch" class="metric">—</div><div class="label">Siguiente partido</div></div>
+      <div class="card"><div id="completed" class="metric">0</div><div class="label">Resultados</div></div>
+      <div class="card"><div id="updated" class="metric">—</div><div class="label">Última actualización</div></div>
+    </section>
+
+    <h2 id="listTitle" class="section-title">Próximos partidos</h2>
+    <section id="matches" class="matches"></section>
+    <section id="groups" class="groups" hidden></section>
+
+    <footer class="footer">
+      Fuente de calendario: <a href="https://www.thestatsapi.com/world-cup/data" style="color:#fde047">TheStatsAPI</a>. Los resultados en vivo requieren un proveedor compatible y pueden no aparecer hasta el torneo.
+    </footer>
+  </main>
+
+<script>
+const FIXTURES_URL='https://www.thestatsapi.com/world-cup/data/fixtures.json';
+// Optional: if you later add a backend proxy, set LIVE_PROXY_URL to its endpoint.
+const LIVE_PROXY_URL='';
+const TZ='America/Matamoros';
+let fixtures=[], liveGames=[], activeTab='upcoming';
+const $=id=>document.getElementById(id);
+const fmtDate=iso=>new Intl.DateTimeFormat('es-MX',{weekday:'short',day:'numeric',month:'short',hour:'numeric',minute:'2-digit',timeZone:TZ}).format(new Date(iso));
+const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+function stageName(s){return {'group-stage':'Fase de grupos','round-of-32':'Dieciseisavos','round-of-16':'Octavos','quarter-finals':'Cuartos','semi-finals':'Semifinal','third-place':'Tercer lugar','final':'Final'}[s]||s||'Partido'}
+function hostCity(c){return (c||'').replaceAll('-',' ').replace(/\b\w/g,m=>m.toUpperCase())}
+async function load(){
+  $('status').textContent='Cargando datos…'; $('notice').hidden=true;
+  try{
+    const cached=JSON.parse(localStorage.getItem('wc2026-cache')||'null');
+    if(cached && Date.now()-cached.t<60_000){fixtures=cached.fixtures; liveGames=cached.liveGames||[]; render('Datos en caché · actualizados hace menos de 1 minuto'); return;}
+  }catch(e){}
+  try{
+    const [fx,live]=await Promise.all([fetch(FIXTURES_URL).then(r=>r.json()), loadLive().catch(()=>null)]);
+    fixtures=(fx.fixtures||[]).map(x=>({...x,status:'scheduled'}));
+    liveGames=Array.isArray(live)?live:[];
+    mergeLive();
+    localStorage.setItem('wc2026-cache',JSON.stringify({t:Date.now(),fixtures,liveGames}));
+    render('Datos actualizados');
+  }catch(err){
+    $('status').textContent='No se pudo cargar el calendario.';
+    $('notice').hidden=false; $('notice').textContent='Error: '+err.message;
+  }
+}
+async function loadLive(){
+  if(!LIVE_PROXY_URL) return [];
+  const r=await fetch(LIVE_PROXY_URL,{cache:'no-store'}); if(!r.ok) throw new Error('Live API '+r.status); return r.json();
+}
+function mergeLive(){
+  // Supports common shapes; safe no-op until a live proxy is connected.
+  const byNum=new Map(liveGames.map(g=>[String(g.matchNumber||g.id||g.number),g]));
+  fixtures=fixtures.map(f=>{const g=byNum.get(String(f.matchNumber)); if(!g) return f; return {...f,...g,status:g.status||g.state||f.status,homeScore:g.homeScore??g.score?.home,awayScore:g.awayScore??g.score?.away};});
+}
+function render(msg){
+  populateFilters(); updateMetrics(); renderGroups(); renderMatches();
+  $('status').textContent=msg; $('updated').textContent=new Intl.DateTimeFormat('es-MX',{hour:'numeric',minute:'2-digit',timeZone:TZ}).format(new Date());
+}
+function filtered(){
+  const g=$('groupFilter').value, q=norm($('search').value), now=Date.now();
+  return fixtures.filter(m=>g==='all'||m.group===g).filter(m=>!q||norm([m.homeTeam,m.awayTeam,m.stadium,m.hostCity].join(' ')).includes(q)).filter(m=>{
+    const done=['FINISHED','finished','done','completed'].includes(m.status)||m.homeScore!=null;
+    if(activeTab==='results') return done || new Date(m.kickoffUtc)<now;
+    if(activeTab==='upcoming') return !done && new Date(m.kickoffUtc)>=now-3*3600_000;
+    return true;
+  }).sort((a,b)=>new Date(a.kickoffUtc)-new Date(b.kickoffUtc));
+}
+function renderMatches(){
+  $('groups').hidden=activeTab!=='groups'; $('matches').hidden=activeTab==='groups';
+  $('listTitle').textContent=activeTab==='results'?'Resultados':activeTab==='groups'?'Grupos':'Próximos partidos';
+  if(activeTab==='groups') return;
+  const rows=filtered().slice(0,activeTab==='upcoming'?36:80);
+  $('matches').innerHTML=rows.length?rows.map(m=>{
+    const done=m.homeScore!=null || ['FINISHED','finished','done','completed'].includes(m.status);
+    const score=done?`<div class="score">${m.homeScore??'-'} - ${m.awayScore??'-'}</div>`:`<span class="badge">${fmtDate(m.kickoffUtc)}</span>`;
+    return `<article class="match"><div class="matchnum">#${m.matchNumber}</div><div><div class="teams">${m.homeTeam} vs ${m.awayTeam}</div><div class="meta">${stageName(m.stage)}${m.group?' · Grupo '+m.group:''} · ${m.stadium} · ${hostCity(m.hostCity)}</div></div><div>${score}</div></article>`
+  }).join(''):'<div class="card">No hay partidos en esta vista.</div>';
+}
+function renderGroups(){
+  const groups={}; fixtures.filter(f=>f.group).forEach(f=>{groups[f.group]=groups[f.group]||new Set(); groups[f.group].add(f.homeTeam); groups[f.group].add(f.awayTeam);});
+  $('groups').innerHTML=Object.entries(groups).sort().map(([g,set])=>`<div class="card group"><h3>Grupo ${g}</h3>${[...set].map(t=>`<div class="team"><span>${t}</span><span>0 pts</span></div>`).join('')}</div>`).join('');
+}
+function updateMetrics(){
+  const now=Date.now(), upcoming=fixtures.filter(m=>new Date(m.kickoffUtc)>=now).sort((a,b)=>new Date(a.kickoffUtc)-new Date(b.kickoffUtc))[0];
+  $('totalMatches').textContent=fixtures.length||104; $('nextMatch').textContent=upcoming?`#${upcoming.matchNumber}`:'—';
+  $('completed').textContent=fixtures.filter(m=>m.homeScore!=null || ['FINISHED','finished','done','completed'].includes(m.status)).length;
+}
+function populateFilters(){
+  if($('groupFilter').options.length>1) return; [...new Set(fixtures.map(f=>f.group).filter(Boolean))].sort().forEach(g=>{const o=document.createElement('option'); o.value=g; o.textContent='Grupo '+g; $('groupFilter').appendChild(o);});
+}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active')); b.classList.add('active'); activeTab=b.dataset.tab; renderMatches();}));
+$('refresh').addEventListener('click',()=>{localStorage.removeItem('wc2026-cache'); load();});
+$('groupFilter').addEventListener('change',renderMatches); $('search').addEventListener('input',renderMatches);
+load();
+</script>
+</body>
+</html>
