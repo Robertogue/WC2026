@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T23:13:45.329Z",
+  "updatedAt": "2026-06-18T01:41:42.858Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -293,7 +293,7 @@
         "id": 9460,
         "name": "Curaçao",
         "shortName": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -754,7 +754,7 @@
     {
       "id": 537410,
       "utcDate": "2026-06-17T23:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": 1,
       "stage": "GROUP_STAGE",
       "group": "GROUP_L",
@@ -773,15 +773,15 @@
         "crest": "https://crests.football-data.org/panama.svg"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
+          "home": 1,
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       }
     },
@@ -1177,7 +1177,7 @@
         "id": 9460,
         "name": "Curaçao",
         "shortName": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -1884,7 +1884,7 @@
         "id": 9460,
         "name": "Curaçao",
         "shortName": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "awayTeam": {
