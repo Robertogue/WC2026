@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T10:51:39.015Z",
+  "updatedAt": "2026-06-18T13:54:43.199Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -754,7 +754,7 @@
     {
       "id": 537410,
       "utcDate": "2026-06-17T23:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": 1,
       "stage": "GROUP_STAGE",
       "group": "GROUP_L",
