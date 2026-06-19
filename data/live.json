@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-19T21:40:09.940Z",
+  "updatedAt": "2026-06-19T22:35:00.323Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -992,7 +992,7 @@
     {
       "id": 537342,
       "utcDate": "2026-06-19T22:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": 2,
       "stage": "GROUP_STAGE",
       "group": "GROUP_C",
@@ -1011,11 +1011,11 @@
         "crest": "https://crests.football-data.org/morocco.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         },
         "halfTime": {
           "home": null,
