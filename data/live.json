@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20T22:20:24.139Z",
+  "updatedAt": "2026-06-20T23:40:32.545Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -93,15 +93,15 @@
         "crest": "https://crests.football-data.org/bosnia.svg"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": null,
         "duration": "REGULAR",
         "fullTime": {
-          "home": 1,
-          "away": 1
+          "home": null,
+          "away": null
         },
         "halfTime": {
-          "home": 0,
-          "away": 1
+          "home": null,
+          "away": null
         }
       }
     },
