@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T16:19:52.112Z",
+  "updatedAt": "2026-06-21T17:59:52.477Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -497,7 +497,7 @@
         "id": 758,
         "name": "Uruguay",
         "shortName": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1252,12 +1252,12 @@
         "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 1,
+          "home": 4,
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 3,
+          "away": 0
         }
       }
     },
@@ -1306,7 +1306,7 @@
         "id": 758,
         "name": "Uruguay",
         "shortName": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "awayTeam": {
@@ -2122,7 +2122,7 @@
         "id": 758,
         "name": "Uruguay",
         "shortName": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "awayTeam": {
