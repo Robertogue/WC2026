@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T13:16:02.057Z",
+  "updatedAt": "2026-06-22T17:59:07.098Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -1366,7 +1366,7 @@
     {
       "id": 537399,
       "utcDate": "2026-06-22T17:00:00Z",
-      "status": "TIMED",
+      "status": "PAUSED",
       "matchday": 2,
       "stage": "GROUP_STAGE",
       "group": "GROUP_J",
@@ -1385,15 +1385,15 @@
         "crest": "https://crests.football-data.org/816.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 0
         }
       }
     },
