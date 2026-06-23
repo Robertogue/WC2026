@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T19:22:18.611Z",
+  "updatedAt": "2026-06-23T21:10:18.829Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -497,7 +497,7 @@
         "id": 758,
         "name": "Uruguay",
         "shortName": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1306,7 +1306,7 @@
         "id": 758,
         "name": "Uruguay",
         "shortName": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "awayTeam": {
@@ -1536,7 +1536,7 @@
     {
       "id": 537411,
       "utcDate": "2026-06-23T20:00:00Z",
-      "status": "SCHEDULED",
+      "status": "PAUSED",
       "matchday": 2,
       "stage": "GROUP_STAGE",
       "group": "GROUP_L",
@@ -1555,15 +1555,15 @@
         "crest": "https://crests.football-data.org/ghana.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       }
     },
@@ -2122,7 +2122,7 @@
         "id": 758,
         "name": "Uruguay",
         "shortName": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "awayTeam": {
