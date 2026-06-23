@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T15:28:42.885Z",
+  "updatedAt": "2026-06-23T17:25:02.901Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -1502,7 +1502,7 @@
     {
       "id": 537405,
       "utcDate": "2026-06-23T17:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": 2,
       "stage": "GROUP_STAGE",
       "group": "GROUP_K",
@@ -1521,11 +1521,11 @@
         "crest": "https://crests.football-data.org/8070.png"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 2,
+          "away": 0
         },
         "halfTime": {
           "home": null,
@@ -2527,11 +2527,11 @@
       "stage": "LAST_32",
       "group": null,
       "homeTeam": {
-        "id": 759,
-        "name": "Germany",
-        "shortName": "Germany",
-        "tla": "GER",
-        "crest": "https://crests.football-data.org/759.svg"
+        "id": null,
+        "name": null,
+        "shortName": null,
+        "tla": null,
+        "crest": null
       },
       "awayTeam": {
         "id": null,
@@ -2663,11 +2663,11 @@
       "stage": "LAST_32",
       "group": null,
       "homeTeam": {
-        "id": 769,
-        "name": "Mexico",
-        "shortName": "Mexico",
-        "tla": "MEX",
-        "crest": "https://crests.football-data.org/769.svg"
+        "id": null,
+        "name": null,
+        "shortName": null,
+        "tla": null,
+        "crest": null
       },
       "awayTeam": {
         "id": null,
@@ -2765,11 +2765,11 @@
       "stage": "LAST_32",
       "group": null,
       "homeTeam": {
-        "id": 771,
-        "name": "United States",
-        "shortName": "USA",
-        "tla": "USA",
-        "crest": "https://crests.football-data.org/usa.svg"
+        "id": null,
+        "name": null,
+        "shortName": null,
+        "tla": null,
+        "crest": null
       },
       "awayTeam": {
         "id": null,
