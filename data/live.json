@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T20:22:10.133Z",
+  "updatedAt": "2026-06-28T21:34:04.236Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -2454,7 +2454,7 @@
     {
       "id": 537417,
       "utcDate": "2026-06-28T19:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
@@ -2473,11 +2473,11 @@
         "crest": "https://crests.football-data.org/canada.svg"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
           "home": 0,
-          "away": 0
+          "away": 1
         },
         "halfTime": {
           "home": 0,
