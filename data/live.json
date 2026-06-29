@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T02:04:52.525Z",
+  "updatedAt": "2026-06-29T07:02:32.946Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -3003,11 +3003,11 @@
       "stage": "LAST_16",
       "group": null,
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "shortName": null,
-        "tla": null,
-        "crest": null
+        "id": 828,
+        "name": "Canada",
+        "shortName": "Canada",
+        "tla": "CAN",
+        "crest": "https://crests.football-data.org/canada.svg"
       },
       "awayTeam": {
         "id": null,
