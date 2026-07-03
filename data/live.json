@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T21:53:36.544Z",
+  "updatedAt": "2026-07-03T22:51:10.722Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -2974,7 +2974,7 @@
     {
       "id": 537427,
       "utcDate": "2026-07-03T22:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
@@ -2993,11 +2993,11 @@
         "crest": "https://crests.football-data.org/cape_verde.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 0
         },
         "halfTime": {
           "home": null,
