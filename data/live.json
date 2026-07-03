@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T01:28:27.154Z",
+  "updatedAt": "2026-07-03T05:11:33.279Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -2894,7 +2894,7 @@
     {
       "id": 537429,
       "utcDate": "2026-07-03T03:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
@@ -2913,15 +2913,15 @@
         "crest": "https://crests.football-data.org/algeria.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 2,
+          "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 0
         }
       }
     },
