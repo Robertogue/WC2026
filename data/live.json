@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T21:37:09.768Z",
+  "updatedAt": "2026-07-04T22:36:33.069Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -3084,7 +3084,7 @@
     {
       "id": 537375,
       "utcDate": "2026-07-04T21:00:00Z",
-      "status": "LIVE",
+      "status": "IN_PLAY",
       "matchday": null,
       "stage": "LAST_16",
       "group": null,
@@ -3110,8 +3110,8 @@
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       }
     },
