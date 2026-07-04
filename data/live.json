@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T17:40:49.876Z",
+  "updatedAt": "2026-07-04T18:38:11.702Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -3069,15 +3069,15 @@
         "crest": "https://crests.football-data.org/morocco.svg"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
           "home": 0,
-          "away": 0
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       }
     },
