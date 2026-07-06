@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T19:11:45.128Z",
+  "updatedAt": "2026-07-06T20:59:18.299Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -3186,7 +3186,7 @@
     {
       "id": 537379,
       "utcDate": "2026-07-06T19:00:00Z",
-      "status": "LIVE",
+      "status": "IN_PLAY",
       "matchday": null,
       "stage": "LAST_16",
       "group": null,
@@ -3205,15 +3205,15 @@
         "crest": "https://crests.football-data.org/760.svg"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
           "home": 0,
-          "away": 0
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       }
     },
