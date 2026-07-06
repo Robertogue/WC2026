@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T01:49:39.777Z",
+  "updatedAt": "2026-07-06T06:14:56.898Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -3152,7 +3152,7 @@
     {
       "id": 537378,
       "utcDate": "2026-07-06T01:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": null,
       "stage": "LAST_16",
       "group": null,
@@ -3174,12 +3174,12 @@
         "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 1,
-          "away": 2
+          "home": 2,
+          "away": 3
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 2
         }
       }
     },
@@ -3395,18 +3395,18 @@
       "stage": "QUARTER_FINALS",
       "group": null,
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "shortName": null,
-        "tla": null,
-        "crest": null
+        "id": 8872,
+        "name": "Norway",
+        "shortName": "Norway",
+        "tla": "NOR",
+        "crest": "https://crests.football-data.org/813.svg"
       },
       "awayTeam": {
-        "id": null,
-        "name": null,
-        "shortName": null,
-        "tla": null,
-        "crest": null
+        "id": 770,
+        "name": "England",
+        "shortName": "England",
+        "tla": "ENG",
+        "crest": "https://crests.football-data.org/770.svg"
       },
       "score": {
         "winner": null,
