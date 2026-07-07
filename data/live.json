@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T01:21:01.636Z",
+  "updatedAt": "2026-07-07T05:12:12.890Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -3220,7 +3220,7 @@
     {
       "id": 537380,
       "utcDate": "2026-07-07T00:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": null,
       "stage": "LAST_16",
       "group": null,
@@ -3243,7 +3243,7 @@
         "duration": "REGULAR",
         "fullTime": {
           "home": 1,
-          "away": 2
+          "away": 4
         },
         "halfTime": {
           "home": 1,
