@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T22:48:48.204Z",
+  "updatedAt": "2026-07-07T23:42:53.541Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -3310,8 +3310,8 @@
         "winner": null,
         "duration": "PENALTY_SHOOTOUT",
         "fullTime": {
-          "home": 0,
-          "away": 1
+          "home": 4,
+          "away": 3
         },
         "halfTime": {
           "home": 0,
@@ -3326,8 +3326,8 @@
           "away": 0
         },
         "penalties": {
-          "home": 1,
-          "away": 1
+          "home": 3,
+          "away": 3
         }
       }
     },
