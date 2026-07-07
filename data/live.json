@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T20:20:00.188Z",
+  "updatedAt": "2026-07-07T21:48:30.129Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -3314,8 +3314,8 @@
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       }
     },
