@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T04:28:42.731Z",
+  "updatedAt": "2026-07-08T07:02:55.319Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -3307,7 +3307,7 @@
         "crest": "https://crests.football-data.org/818.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "PENALTY_SHOOTOUT",
         "fullTime": {
           "home": 4,
@@ -3326,7 +3326,7 @@
           "away": 0
         },
         "penalties": {
-          "home": 3,
+          "home": 4,
           "away": 3
         }
       }
@@ -3441,18 +3441,18 @@
       "stage": "QUARTER_FINALS",
       "group": null,
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "shortName": null,
-        "tla": null,
-        "crest": null
+        "id": 762,
+        "name": "Argentina",
+        "shortName": "Argentina",
+        "tla": "ARG",
+        "crest": "https://crests.football-data.org/762.png"
       },
       "awayTeam": {
-        "id": null,
-        "name": null,
-        "shortName": null,
-        "tla": null,
-        "crest": null
+        "id": 788,
+        "name": "Switzerland",
+        "shortName": "Switzerland",
+        "tla": "SUI",
+        "crest": "https://crests.football-data.org/788.svg"
       },
       "score": {
         "winner": null,
