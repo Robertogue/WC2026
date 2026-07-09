@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T20:55:15.949Z",
+  "updatedAt": "2026-07-09T22:11:05.056Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -3334,7 +3334,7 @@
     {
       "id": 537383,
       "utcDate": "2026-07-09T20:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": null,
       "stage": "QUARTER_FINALS",
       "group": null,
@@ -3353,15 +3353,15 @@
         "crest": "https://crests.football-data.org/morocco.svg"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
+          "home": 2,
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       }
     },
