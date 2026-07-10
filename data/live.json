@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T19:22:12.377Z",
+  "updatedAt": "2026-07-10T20:46:35.541Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -3390,12 +3390,12 @@
         "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
-          "away": 0
+          "home": 1,
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 1
         }
       }
     },
