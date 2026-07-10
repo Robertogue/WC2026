@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T17:58:32.409Z",
+  "updatedAt": "2026-07-10T19:22:12.377Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -3368,7 +3368,7 @@
     {
       "id": 537384,
       "utcDate": "2026-07-10T19:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": null,
       "stage": "QUARTER_FINALS",
       "group": null,
@@ -3387,11 +3387,11 @@
         "crest": "https://crests.football-data.org/805.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "halfTime": {
           "home": null,
