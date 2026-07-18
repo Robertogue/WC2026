@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-18T22:03:28.475Z",
+  "updatedAt": "2026-07-18T23:05:54.567Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -3554,7 +3554,7 @@
     {
       "id": 537389,
       "utcDate": "2026-07-18T21:00:00Z",
-      "status": "PAUSED",
+      "status": "IN_PLAY",
       "matchday": null,
       "stage": "THIRD_PLACE",
       "group": null,
@@ -3576,8 +3576,8 @@
         "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
-          "away": 4
+          "home": 4,
+          "away": 5
         },
         "halfTime": {
           "home": 0,
