@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T04:48:56.647Z",
+  "updatedAt": "2026-07-20T07:49:28.674Z",
   "source": "football-data.org",
   "count": 104,
   "matches": [
@@ -3618,8 +3618,8 @@
           "away": 0
         },
         "regularTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "extraTime": {
           "home": 1,
